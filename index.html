@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>To do List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type='text/css' media='screen' href="assets/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="Load()">
+    <h2>To Do List</h2>
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col-6 p-1">
+                <div class="border">
+                    <h2 class="text-info bg-secondary text-center m-0">Form</h2>
+                    <form class="p-3">
+                        <div class="d-flex text-center justify-content-center gap-4">
+                            <input type="text" class="form-control" id="text" placeholder="Enter your Task" required/>
+                            <div class="d-flex justify-content-center gap-2">
+                                <button class="btn btn-outline-success">Submit</button>
+                                <button type="reset" class="btn btn-outline-warning">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-6 p-1">
+                <div class="border">
+                    <h2 class="text-info text-center bg-secondary m-0"> Table</h2>
+                    <table class="table table-stripped">
+                        <thead>
+                            <tr class="text-center">
+                                <th>S.No.</th>
+                                <th>Task</th>
+                                <th>Status</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="assets/main.js"></script>
+</html>
