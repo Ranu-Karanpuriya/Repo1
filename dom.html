@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="hh">raju</h1>
+    <h1 id="h1">monu</h1>
+    <h1 id="h1">lalu</h1>
+    <h1 id="h1">pintu</h1>
+    <h1 class="hh">sunil</h1>
+
+    <script>
+
+        let h1s = document.querySelectorAll('#h1')
+
+        for (let i = 0; i < h1s.length; i++) {
+            h1s[i].addEventListener("mouseover", function () { this.innerText = "sanjay" })
+            h1s[i].addEventListener("mouseout", closure(h1s[i].innerHTML))
+        }
+
+        function closure(nn) {
+            return function () { this.innerText = nn }
+        }
+
+
+        let h1 = document.querySelectorAll('.hh')
+
+        for (let i = 0; i < h1.length; i++) {
+            h1[i].addEventListener("mouseover", function () { this.innerText = "manjay" })
+            h1[i].addEventListener("mouseout",
+             (function (mm) { return function () { this.innerHTML = mm } })(h1[i].innerHTML))
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
