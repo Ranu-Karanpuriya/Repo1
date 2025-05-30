@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="form">
+
+        <input type="text" placeholder="text" name="task" id="task">
+
+        <button type="submit">Add</button>
+
+    </form>
+
+    <button onclick="getItem()">Get Item</button>
+    <button onclick="clearItem()">Clear Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+
+    <button onclick="back()">Back</button>
+    <button onclick="Reload()">Reload</button>
+
+    <button onclick="getCookies()">Cookies</button>
+
+    <script>
+
+        let form = document.querySelector("#form")
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault()
+            let task = document.getElementById("task").value
+
+            let p = document.createElement("p")
+            p.innerText = task
+
+            document.body.appendChild(p)
+
+            console.log(sessionStorage.length);
+            console.log(sessionStorage.key(0));
+
+
+
+            sessionStorage.setItem("task", JSON.stringify({ task }))
+
+        });
+
+        function getItem() {
+            let res = JSON.parse(sessionStorage.getItem("task"))
+            console.log(res)
+        }
+
+        function clearItem() {
+            let res = sessionStorage.clear()
+        }
+
+        function removeItem() {
+            let res = sessionStorage.removeItem("task")
+        }
+
+        function getCookies() {
+            let cook = document.cookie
+            console.log(cook);
+            window.oncontextmenu = () => {
+                return false
+            }
+        }
+
+        function back() {
+            window.history.back()
+
+        }
+
+        function Reload() {
+            window.location.reload()
+        }
+
+    </script>
+</body>
+
+</html>
